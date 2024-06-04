@@ -14,11 +14,11 @@ html_start = """
         <meta name = "generator" content = "Jekyll v3.8.5" />
         <meta property = "og:title" content = "HPE Storage CI LOGS" />
         <meta property = "og:locale" content = "en_US" />
-        <link rel = "canonical" href = "https://hpe-storage.github.io/nimble-ci-logs/" />
-        <meta property = "og:url" content = "https://hpe-storage.github.io/nimble-ci-logs/" />
+        <link rel = "canonical" href = "https://hpe-storage.github.io/hpe-ci-log/" />
+        <meta property = "og:url" content = "https://hpe-storage.github.io/hpe-ci-log/" />
         <meta property = "og:site_name" content = "HPE Storage CI LOGS" />
         <script type = "application/ld+json">
-        {"@type": "WebSite", "headline": "HPE Storage CI LOGS", "url": "https://hpe-storage.github.io/nimble-ci-logs/", "name": "HPE Storage CI LOGS", "@context": "http://schema.org"} </script>
+        {"@type": "WebSite", "headline": "HPE Storage CI LOGS", "url": "https://hpe-storage.github.io/hpe-ci-log/", "name": "HPE Storage CI LOGS", "@context": "http://schema.org"} </script>
         <!-- End Jekyll SEO tag -->
     </head>
     <body>
