@@ -90,7 +90,7 @@ def create_html(path):
             if '.html' not in i:
                 if os.path.isdir(new_path):
                     table_start = table_start + \
-                        "<tr><td><a href = 'https://hpe-storage.github.io/nimble-ci-log/{}/{}.html'>{}</a></td></tr>\n".format(
+                        "<tr><td><a href = 'https://hpe-storage.github.io/hpe-ci-log/{}/{}.html'>{}</a></td></tr>\n".format(
                             new_path.split(sys.argv[1])[-1], i, i)
                     # Recurse for next folder
                     create_html(new_path)
