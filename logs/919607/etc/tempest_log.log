@@ -2,217 +2,444 @@
 {0} setUpClass (tempest.api.compute.admin.test_live_migration.LiveMigrationTest) ... SKIPPED: Less than 2 compute nodes, skipping migration test.
 {0} setUpClass (tempest.api.compute.servers.test_server_rescue.ServerBootFromVolumeStableRescueTest) ... SKIPPED: Stable rescue not available.
 {0} setUpClass (tempest.api.compute.servers.test_server_rescue.ServerStableDeviceRescueTest) ... SKIPPED: Stable rescue not available.
-{0} tempest.api.compute.volumes.test_volume_snapshots.VolumesSnapshotsTestJSON.test_volume_snapshot_create_get_list_delete [5.065378s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_get.VolumesGetTestJSON.test_volume_create_get_delete [1.391881s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list [0.061966s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_param_limit [0.061552s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_param_offset_and_limit [0.101347s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_detail_param_limit [0.051119s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_detail_param_offset_and_limit [0.087974s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_details [0.041265s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size [0.072502s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero [0.014123s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size [0.008678s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id [0.022986s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id [0.004980s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id [0.003924s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id [0.020995s] ... ok
-{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id [0.021818s] ... ok
-{0} tempest.api.volume.admin.test_backends_capabilities.BackendsCapabilitiesAdminTestsJSON.test_compare_volume_stats_values [1.606422s] ... ok
-{0} tempest.api.volume.admin.test_backends_capabilities.BackendsCapabilitiesAdminTestsJSON.test_get_capabilities_backend [0.521340s] ... ok
+{0} tempest.api.compute.volumes.test_volume_snapshots.VolumesSnapshotsTestJSON.test_volume_snapshot_create_get_list_delete [5.106729s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_get.VolumesGetTestJSON.test_volume_create_get_delete [1.391668s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list [0.078803s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_param_limit [0.060166s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_param_offset_and_limit [0.072921s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_detail_param_limit [0.047234s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_detail_param_offset_and_limit [0.082515s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_details [0.042768s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size [0.057424s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero [0.012870s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size [0.006613s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id [0.022110s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id [0.004978s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id [0.004491s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id [0.020771s] ... ok
+{0} tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id [0.021740s] ... ok
+{0} tempest.api.image.v2.test_images_dependency.ImageDependencyTests.test_image_volume_server_snapshot_dependency [6.651996s] ... FAILED
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/common/utils/__init__.py", line 65, in wrapper
+    return f(*func_args, **func_kwargs)
+
+      File "/opt/stack/tempest/tempest/api/image/v2/test_images_dependency.py", line 128, in test_image_volume_server_snapshot_dependency
+    base_image_id, snapshot_image_id = self._create_instance_snapshot(
+
+      File "/opt/stack/tempest/tempest/api/image/v2/test_images_dependency.py", line 77, in _create_instance_snapshot
+    instance = self.create_test_server(
+
+      File "/opt/stack/tempest/tempest/api/compute/base.py", line 243, in create_test_server
+    body, servers = compute.create_test_server(
+
+      File "/opt/stack/tempest/tempest/common/compute.py", line 264, in create_test_server
+    with excutils.save_and_reraise_exception():
+
+      File "/opt/stack/data/venv/lib/python3.10/site-packages/oslo_utils/excutils.py", line 227, in __exit__
+    self.force_reraise()
+
+      File "/opt/stack/data/venv/lib/python3.10/site-packages/oslo_utils/excutils.py", line 200, in force_reraise
+    raise self.value
+
+      File "/opt/stack/tempest/tempest/common/compute.py", line 260, in create_test_server
+    waiters.wait_for_volume_resource_status(volumes_client,
+
+      File "/opt/stack/tempest/tempest/common/waiters.py", line 372, in wait_for_volume_resource_status
+    raise exceptions.VolumeResourceBuildErrorException(
+
+    tempest.exceptions.VolumeResourceBuildErrorException: volume 8e66ccf9-e65e-4fc0-8258-cacfa95f7953 failed to build and is in ERROR status
+
+
+Captured pythonlogging:
+~~~~~~~~~~~~~~~~~~~~~~~
+    2024-07-08 15:43:00,679 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 201 POST http://10.201.5.87/image/v2/images 0.388s
+2024-07-08 15:43:00,680 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"name": "tempest-image-dependency-test-1277504139", "container_format": "bare", "disk_format": "raw", "visibility": "private"}
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:00 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '648', 'content-type': 'application/json', 'location': 'http://127.0.0.1:60999/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd', 'openstack-image-import-methods': 'glance-direct,web-download,copy-image', 'x-openstack-request-id': 'req-b23f0dc5-4378-439a-998f-e580cb854998', 'connection': 'close', 'status': '201', 'content-location': 'http://10.201.5.87/image/v2/images'}
+        Body: b'{"name": "tempest-image-dependency-test-1277504139", "disk_format": "raw", "container_format": "bare", "visibility": "private", "size": null, "virtual_size": null, "status": "queued", "checksum": null, "protected": false, "min_ram": 0, "min_disk": 0, "owner": "cd2ad5dbdfc345e98b04096c8fa60e9c", "os_hidden": false, "os_hash_algo": null, "os_hash_value": null, "id": "ab83f358-db49-40de-85c9-f52686f04bfd", "created_at": "2024-07-08T15:43:01Z", "updated_at": "2024-07-08T15:43:01Z", "tags": [], "self": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd", "file": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file", "schema": "/v2/schemas/image"}'
+2024-07-08 15:43:01,393 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 204 PUT http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file 0.712s
+2024-07-08 15:43:01,394 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/octet-stream', 'X-Auth-Token': '<omitted>'}
+        Body: <callable_iterator object at 0x7f97fdb8c160>
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:00 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'text/html; charset=UTF-8', 'x-openstack-request-id': 'req-1472fb01-eef7-49af-b04b-bb17095ed180', 'connection': 'close', 'status': '204', 'content-location': 'http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file'}
+        Body: b''
+2024-07-08 15:43:01,410 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd 0.016s
+2024-07-08 15:43:01,410 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '808', 'content-type': 'application/json', 'x-openstack-request-id': 'req-07773e32-caa5-4819-83f3-347e3ea6c2e8', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd'}
+        Body: b'{"name": "tempest-image-dependency-test-1277504139", "disk_format": "raw", "container_format": "bare", "visibility": "private", "size": 1024, "virtual_size": 1024, "status": "active", "checksum": "d213d3221b79e6a3cb56e561e8d673b1", "protected": false, "min_ram": 0, "min_disk": 0, "owner": "cd2ad5dbdfc345e98b04096c8fa60e9c", "os_hidden": false, "os_hash_algo": "sha512", "os_hash_value": "3b998a78699e002b9d5b1734564a250fad4c4db8f8c19270cfe2aa226d3ab0c655388f04d424b2ffbc0a5ecf7c3387bbf2740dada4bb6e635a597c8476f06c77", "id": "ab83f358-db49-40de-85c9-f52686f04bfd", "created_at": "2024-07-08T15:43:01Z", "updated_at": "2024-07-08T15:43:01Z", "tags": [], "self": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd", "file": "/v2/images/ab83f
+    358-db49-40de-85c9-f52686f04bfd/file", "schema": "/v2/schemas/image"}'
+2024-07-08 15:43:01,431 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 201 POST http://10.201.5.87/identity/v3/auth/tokens 0.018s
+2024-07-08 15:43:01,432 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        Body: <omitted>
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'content-length': '2819', 'x-subject-token': '<omitted>', 'vary': 'X-Auth-Token', 'x-openstack-request-id': 'req-fb77b339-7a4f-4b33-aad0-b0a00578b7b0', 'connection': 'close', 'status': '201', 'content-location': 'http://10.201.5.87/identity/v3/auth/tokens'}
+        Body: b'{"token": {"methods": ["password"], "user": {"domain": {"id": "default", "name": "Default"}, "id": "76c7f999a2334fe4b0576aa9756d58e8", "name": "tempest-ImageDependencyTests-897282111-project-member", "password_expires_at": null}, "audit_ids": ["8jqiyW6pQ4W6QXguaC9RsA"], "expires_at": "2024-07-08T16:43:01.000000Z", "issued_at": "2024-07-08T15:43:01.000000Z", "project": {"domain": {"id": "default", "name": "Default"}, "id": "cd2ad5dbdfc345e98b04096c8fa60e9c", "name": "tempest-ImageDependencyTests-897282111"}, "is_domain": false, "roles": [{"id": "6264315620f145dba0e833e4ccc8803f", "name": "member"}, {"id": "e31259f898b340adbf07916790d1610d", "name": "reader"}], "catalog": [{"endpoints": [{"id": "530c547e45364337b0be34c431bf71ea", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/compute/v2/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "56837a00ed9c4df38e279965c74d3195", "type": "compute_legacy", "name": "nova_legacy"}, {"endpoints": [{"id": "0c837daf09e14ae986585147d77cad5e", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/image", "region": "RegionOne"}], "id": "6ca9389f6f96436f9a8440d9ad620a77", "type": "image", "name": "glance"}, {"endpoints": [{"id": "5cac46dbde974438aa264ac7cc5fa1db", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/compute/v2.1", "region": "RegionOne"}], "id": "7ea4a3831ba14241b8b1f60b0cf559b8", "type": "compute", "name": "nova"}, {"endpoints": [{"id": "47e1db7fab2943eda63459f1e4afba99", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87:9696/networking", "region": "RegionOne"}], "id": "a09072a0b4a14027b7fb27ae53ecdf2d", "type": "network", "name": "neutron"}, {"endpoints": [{"id": "1c9435309c52469db2f7201eb7bdb367", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "a9fe85bc35dc4aa3b7dad12946258b62", "type": "volumev3", "name": "cinderv3"}, {"endpoints": [{"id": "4ed80eedf63c43f3aafebc9368e21afa", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "c4c74a597619429fa56533ff55f0264c", "type": "block-storage", "name": "cinder"}, {"endpoints": [{"id": "d717fb72f4c1480e9d45aa827ce71ec1", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/identity", "region": "RegionOne"}], "id": "f065218e39a8428e8ae854b3fedffc2a", "type": "identity", "name": "keystone"}, {"endpoints": [{"id": "82c0d48dcb6d46ca860f4943bae1eb70", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/placement", "region": "RegionOne"}], "id": "f2e9b292247a40a3a4a86962f1c5b1e5", "type": "placement", "name": "placement"}]}}'
+2024-07-08 15:43:01,432 116299 INFO     [tempest.lib.common.fixed_network] (ImageDependencyTests:test_image_volume_server_snapshot_dependency) Found network None available for tenant
+2024-07-08 15:43:01,633 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 202 POST http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60
+    e9c/volumes 0.200s
+2024-07-08 15:43:01,633 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"volume": {"name": "tempest-tempest.common.compute-volume-1895717299", "imageRef": "ab83f358-db49-40de-85c9-f52686f04bfd", "size": 1}}
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-4951d462-15fd-4b1b-ad83-d1cb35ae1cf0', 'content-length': '819', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-4951d462-15fd-4b1b-ad83-d1cb35ae1cf0', 'connection': 'close', 'status': '202', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:01.597884", "updated_at": null, "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": []}}'
+2024-07-08 15:43:01,677 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.039s
+2024-07-08 15:43:01,677 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-c81b6a4b-a38a-4a5d-ac61-c6c98b5d2cba', 'content-length': '887', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-c81b6a4b-a38a-4a5d-ac61-c6c98b5d2cba', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": null, "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:02,715 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.024s
+2024-07-08 15:43:02,715 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        B
+    ody: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:02 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-ce1f3b75-d15e-4842-b432-97dfdd78df0b', 'content-length': '911', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-ce1f3b75-d15e-4842-b432-97dfdd78df0b', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:02.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:03,748 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.026s
+2024-07-08 15:43:03,748 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:03 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-ff730510-8a51-458d-b48b-568a8cb73123', 'content-length': '969', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-ff730510-8a51-458d-b48b-568a8cb73123', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:02.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:04,785 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.031s
+2024-07-08 15:43:04,785 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:04 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'applica
+    tion/json', 'x-compute-request-id': 'req-93035ff6-5c44-42b5-aaf6-4db92a2d470c', 'content-length': '972', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-93035ff6-5c44-42b5-aaf6-4db92a2d470c', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "downloading", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:04.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:05,825 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.034s
+2024-07-08 15:43:05,825 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-e31020f6-8173-4609-878b-fb27053621d0', 'content-length': '966', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-e31020f6-8173-4609-878b-fb27053621d0', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "error", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:06.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:05,879 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 202 DELETE http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.049s
+2024-07-08 15:43:05,880 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '0', 'content-type': 'text/html; charset=UTF-8', 'openstack-api-version': 'volume
+     3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-625745f4-8b0a-45a1-ad4a-ce48f6c53ef3', 'connection': 'close', 'status': '202', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b''
+2024-07-08 15:43:05,908 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.027s
+2024-07-08 15:43:05,908 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-5e3e7fac-b6dd-454a-95ac-f960763668d5', 'content-length': '969', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-5e3e7fac-b6dd-454a-95ac-f960763668d5', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "deleting", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:06.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:06,940 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 404 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.024s
+2024-07-08 15:43:06,940 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:06 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'content-length': '109', 'content-type': 'application/json', 'x-compute-request-id': 'req-9c08a6dc-8f5a-40ab-87b4-8d0cc9a4d4a6', 'x-openstack-request-id': 'req-9c08a6dc-8f5a-40ab-87b4-8d0cc9a4d4a6', 'connection': 'close', 'status': '404', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"itemNotFound": {"code": 404, "message": "Volume 8e66ccf9-e65e-4fc0-8258-cacfa95f7953 could not be found."}}'
+
+{0} tempest.api.volume.admin.test_backends_capabilities.BackendsCapabilitiesAdminTestsJSON.test_compare_volume_stats_values [1.624561s] ... ok
+{0} tempest.api.volume.admin.test_backends_capabilities.BackendsCapabilitiesAdminTestsJSON.test_get_capabilities_backend [0.527300s] ... ok
 {0} setUpClass (tempest.api.volume.admin.test_encrypted_volumes_extend.EncryptedVolumesExtendAttachedTest) ... SKIPPED: Attached encrypted volume extend is disabled.
-{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_create_group_from_group_snapshot [9.460777s] ... ok
-{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_delete_group_snapshots_following_updated_volumes [11.963692s] ... ok
-{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_group_snapshot_create_show_list_delete [6.124346s] ... ok
-{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status [6.454597s] ... ok
-{0} tempest.api.volume.admin.test_group_type_specs.GroupTypeSpecsTest.test_group_type_specs_create_show_update_list_delete [0.351261s] ... ok
-{0} tempest.api.volume.admin.test_group_types.GroupTypesTest.test_group_type_create_list_update_show_delete [0.198326s] ... ok
-{0} tempest.api.volume.admin.test_group_types.GroupTypesTest.test_group_type_list_by_optional_params [0.187975s] ... ok
-{0} tempest.api.volume.admin.test_groups.GroupsTest.test_group_create_show_list_delete [6.212273s] ... ok
-{0} tempest.api.volume.admin.test_groups.GroupsTest.test_group_update [7.253868s] ... ok
-{0} tempest.api.volume.admin.test_groups.GroupsV314Test.test_create_group_from_group [9.105044s] ... ok
-{0} tempest.api.volume.admin.test_groups.GroupsV320Test.test_reset_group_status [2.655950s] ... ok
-{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_distinction [0.048937s] ... ok
-{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_distinction_with_prefix [0.064891s] ... ok
-{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_reporting [0.059015s] ... ok
-{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_reporting_with_prefix [0.186973s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_associate_disassociate_qos [0.392569s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_back_end_consumer [0.094340s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_both_consumer [0.084217s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_front_end_consumer [0.087861s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_get_qos [0.010125s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_list_qos [0.010451s] ... ok
-{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_set_unset_qos_key [0.093081s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_reset_snapshot_status [0.161001s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_creating [2.416916s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_deleting [2.417318s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_error [2.377653s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_error_deleting [2.331781s] ... ok
-{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_update_snapshot_status [0.130784s] ... ok
-{0} tempest.api.volume.admin.test_user_messages.UserMessagesTest.test_delete_message [1.703155s] ... ok
-{0} tempest.api.volume.admin.test_user_messages.UserMessagesTest.test_list_show_messages [1.448984s] ... ok
-{0} tempest.api.volume.admin.test_volume_hosts.VolumeHostsAdminTestsJSON.test_list_hosts [0.107628s] ... ok
-{0} tempest.api.volume.admin.test_volume_hosts.VolumeHostsAdminTestsJSON.test_show_host [0.130343s] ... ok
+{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_create_group_from_group_snapshot [9.528914s] ... ok
+{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_delete_group_snapshots_following_updated_volumes [11.966803s] ... ok
+{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsTest.test_group_snapshot_create_show_list_delete [6.073003s] ... ok
+{0} tempest.api.volume.admin.test_group_snapshots.GroupSnapshotsV319Test.test_reset_group_snapshot_status [6.330289s] ... ok
+{0} tempest.api.volume.admin.test_group_type_specs.GroupTypeSpecsTest.test_group_type_specs_create_show_update_list_delete [0.400458s] ... ok
+{0} tempest.api.volume.admin.test_group_types.GroupTypesTest.test_group_type_create_list_update_show_delete [0.162043s] ... ok
+{0} tempest.api.volume.admin.test_group_types.GroupTypesTest.test_group_type_list_by_optional_params [0.166566s] ... ok
+{0} tempest.api.volume.admin.test_groups.GroupsTest.test_group_create_show_list_delete [6.356770s] ... ok
+{0} tempest.api.volume.admin.test_groups.GroupsTest.test_group_update [7.359344s] ... ok
+{0} tempest.api.volume.admin.test_groups.GroupsV314Test.test_create_group_from_group [8.005661s] ... ok
+{0} tempest.api.volume.admin.test_groups.GroupsV320Test.test_reset_group_status [2.747761s] ... ok
+{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_distinction [0.057110s] ... ok
+{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_distinction_with_prefix [0.054048s] ... ok
+{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_reporting [0.056563s] ... ok
+{0} tempest.api.volume.admin.test_multi_backend.VolumeMultiBackendTest.test_backend_name_reporting_with_prefix [0.054107s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_associate_disassociate_qos [0.399002s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_back_end_consumer [0.097947s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_both_consumer [0.088653s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_create_delete_qos_with_front_end_consumer [0.086568s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_get_qos [0.010398s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_list_qos [0.012103s] ... ok
+{0} tempest.api.volume.admin.test_qos.QosSpecsTestJSON.test_set_unset_qos_key [0.077528s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_reset_snapshot_status [0.144382s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_creating [2.346004s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_deleting [2.350861s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_error [2.370400s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_snapshot_force_delete_when_snapshot_is_error_deleting [2.347608s] ... ok
+{0} tempest.api.volume.admin.test_snapshots_actions.SnapshotsActionsTest.test_update_snapshot_status [0.128027s] ... ok
+{0} tempest.api.volume.admin.test_user_messages.UserMessagesTest.test_delete_message [1.670781s] ... ok
+{0} tempest.api.volume.admin.test_user_messages.UserMessagesTest.test_list_show_messages [1.484086s] ... ok
+{0} tempest.api.volume.admin.test_volume_hosts.VolumeHostsAdminTestsJSON.test_list_hosts [0.091745s] ... ok
+{0} tempest.api.volume.admin.test_volume_hosts.VolumeHostsAdminTestsJSON.test_show_host [0.124583s] ... ok
 {0} setUpClass (tempest.api.volume.admin.test_volume_manage.VolumeManageAdminTest) ... SKIPPED: Manage volume tests are disabled
-{0} tempest.api.volume.admin.test_volume_pools.VolumePoolsAdminTestsJSON.test_get_pools_with_details [0.580323s] ... ok
-{0} tempest.api.volume.admin.test_volume_pools.VolumePoolsAdminTestsJSON.test_get_pools_without_details [0.526728s] ... ok
-{0} tempest.api.volume.admin.test_volume_quota_classes.VolumeQuotaClassesTest.test_show_default_quota [0.094230s] ... ok
-{0} tempest.api.volume.admin.test_volume_quota_classes.VolumeQuotaClassesTest.test_update_default_quota [0.525276s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_delete_quota [0.251024s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_list_default_quotas [0.024656s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_list_quotas [0.024232s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_quota_usage [2.495849s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_quota_usage_after_volume_transfer [3.381756s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_show_quota_usage [0.031705s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_update_all_quota_resources_for_tenant [0.176016s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_quota_volume_gigabytes [0.129509s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_quota_volumes [0.114189s] ... ok
-{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_volume_extend_gigabytes_quota_deviation [0.105559s] ... ok
-{0} tempest.api.volume.admin.test_volume_retype.VolumeRetypeWithoutMigrationTest.test_available_volume_retype [3.725373s] ... ok
-{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_host_name [0.027507s] ... ok
-{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_service_and_host_name [0.019666s] ... ok
-{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_service_binary_name [0.016020s] ... ok
-{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_volume_host_name [2.445152s] ... ok
-{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_list_services [0.030378s] ... ok
-{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_disable_log_reason_with_no_reason [0.008889s] ... ok
-{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_disable_service_with_invalid_binary [0.012724s] ... ok
-{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_enable_service_with_invalid_host [0.012931s] ... ok
-{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_freeze_host_with_invalid_host [0.019579s] ... ok
-{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_thaw_host_with_invalid_host [0.012741s] ... ok
-{0} tempest.api.volume.admin.test_volume_snapshot_quotas_negative.VolumeSnapshotQuotasNegativeTestJSON.test_quota_volume_gigabytes_snapshots [0.206132s] ... ok
-{0} tempest.api.volume.admin.test_volume_snapshot_quotas_negative.VolumeSnapshotQuotasNegativeTestJSON.test_quota_volume_snapshots [0.043396s] ... ok
-{0} tempest.api.volume.admin.test_volume_type_access.VolumeTypesAccessTest.test_volume_type_access_add [2.639908s] ... ok
-{0} tempest.api.volume.admin.test_volume_type_access.VolumeTypesAccessTest.test_volume_type_access_list [0.170125s] ... ok
-{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_crud_with_volume_type_and_extra_specs [3.792980s] ... ok
-{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_create_get_delete [0.086171s] ... ok
-{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_encryption_create_get_update_delete [0.269943s] ... ok
-{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_list [0.021044s] ... ok
-{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_update [0.105603s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_spec_create_get_delete [0.106586s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_specs_list [0.052670s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_specs_update [0.163767s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_invalid_body [0.012480s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_none_body [0.011511s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_nonexistent_type_id [0.017194s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_delete_nonexistent_volume_type_id [0.011601s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_get_nonexistent_extra_spec_name [0.011602s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_get_nonexistent_volume_type_id [0.012901s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_list_nonexistent_volume_type_id [0.016815s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_multiple_extra_spec [0.009810s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_no_body [0.007872s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_none_extra_spec_id [0.019104s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_nonexistent_extra_spec_id [0.020467s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_nonexistent_type_id [0.034416s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_volume_type_encryption_nonexistent_type_id [0.082972s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_volume_with_private_volume_type [0.138409s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_with_empty_name [0.013089s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_with_repeated_name [0.075534s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_delete_nonexistent_type_id [0.010248s] ... ok
-{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_get_nonexistent_type_id [0.008848s] ... ok
-{0} tempest.api.volume.admin.test_volumes_list.VolumesListAdminTestJSON.test_volume_list_param_tenant [1.361207s] ... ok
-{0} tempest.api.volume.test_availability_zone.AvailabilityZoneTestJSON.test_get_availability_zone_list [0.083973s] ... ok
-{0} tempest.api.volume.test_extensions.ExtensionsTestJSON.test_list_extensions [0.064737s] ... ok
-{0} tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata [0.157419s] ... ok
-{0} tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item [0.149148s] ... ok
-{0} tempest.api.volume.test_versions.VersionsTest.test_list_versions [0.010856s] ... ok
-{0} tempest.api.volume.test_versions.VersionsTest.test_show_version [0.086668s] ... ok
-{0} tempest.api.volume.test_volume_absolute_limits.AbsoluteLimitsTests.test_get_volume_absolute_limits [0.036510s] ... ok
-{0} tempest.api.volume.test_volume_delete_cascade.VolumesDeleteCascade.test_volume_delete_cascade [5.995735s] ... ok
-{0} tempest.api.volume.test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete [9.158213s] ... ok
-{0} tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata [0.201432s] ... ok
-{0} tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_show_volume_metadata_item [0.136897s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersTest.test_create_get_list_accept_volume_transfer [3.455160s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersTest.test_create_list_delete_volume_transfer [2.530218s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV355Test.test_create_get_list_accept_volume_transfer [3.435898s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV355Test.test_create_list_delete_volume_transfer [2.544141s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV357Test.test_create_get_list_accept_volume_transfer [3.403921s] ... ok
-{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV357Test.test_create_list_delete_volume_transfer [2.584342s] ... ok
-{0} tempest.api.volume.test_volumes_clone.VolumesCloneTest.test_create_from_volume [4.777531s] ... ok
-{0} tempest.api.volume.test_volumes_clone_negative.VolumesCloneNegativeTest.test_create_from_volume_decreasing_size [2.413729s] ... ok
-{0} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete [4.844391s] ... ok
-{0} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_as_clone [8.295435s] ... ok
-{0} tempest.api.volume.test_volumes_get.VolumesSummaryTest.test_show_volume_summary [0.093159s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list [0.023249s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_name [0.046843s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_name [0.049937s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_pagination [0.231247s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_with_multiple_params [0.131678s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_pagination [0.131122s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_param_display_name_and_status [0.209937s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_display_name_and_status [0.219985s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_marker [0.069561s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_metadata [0.065532s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_details [0.040775s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_param_metadata [0.028528s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_availability_zone [0.074876s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_bootable [0.108917s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_status [0.066435s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_availability_zone [0.036306s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_bootable [0.027276s] ... ok
-{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_status [0.034451s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_from_deactivated_image [1.467780s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_from_image_with_decreasing_size [1.037529s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size [0.009004s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_snapshot_id [0.013367s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_source_volid [0.014546s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_volume_type [0.013715s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_negative [0.006417s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero [0.006597s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size [0.006859s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id [0.011616s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id [0.004052s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_detach_volumes_with_invalid_volume_id [0.011269s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id [0.012338s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id [0.004317s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_invalid_status [0.020226s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_nonexistent_name [0.020040s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_invalid_status [0.015160s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_nonexistent_name [0.015037s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status [0.068909s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id [0.012879s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id [0.012062s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_empty_volume_id [0.004439s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_invalid_volume_id [0.014459s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_nonexistent_volume_id [0.013012s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id [0.012016s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_None_size [0.006076s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_non_number_size [0.005912s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_nonexistent_volume_id [0.011782s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_size_smaller_than_original_size [0.006349s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_without_passing_volume_id [0.012456s] ... ok
-{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id [0.011712s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit [0.029117s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit_equals_infinite [0.036617s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit_equals_zero [0.012045s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_marker [0.038964s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_offset [0.036492s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_created_at_asc [0.021687s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_created_at_desc [0.022053s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_id_asc [0.018839s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_id_desc [0.032878s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_name_asc [0.020049s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_name_desc [0.025591s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_details_with_params [0.082053s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_with_params [0.064374s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id [0.065901s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id [0.042160s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshot_invalid_param_limit [0.016971s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshots_invalid_param_marker [0.016543s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshots_invalid_param_sort [0.011747s] ... ok
-{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_volume_from_snapshot_decreasing_size [4.601743s] ... ok
+{0} tempest.api.volume.admin.test_volume_pools.VolumePoolsAdminTestsJSON.test_get_pools_with_details [0.589478s] ... ok
+{0} tempest.api.volume.admin.test_volume_pools.VolumePoolsAdminTestsJSON.test_get_pools_without_details [0.519428s] ... ok
+{0} tempest.api.volume.admin.test_volume_quota_classes.VolumeQuotaClassesTest.test_show_default_quota [0.091184s] ... ok
+{0} tempest.api.volume.admin.test_volume_quota_classes.VolumeQuotaClassesTest.test_update_default_quota [0.492626s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_delete_quota [0.184362s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_list_default_quotas [0.018920s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_list_quotas [0.026301s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_quota_usage [2.504469s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_quota_usage_after_volume_transfer [3.368369s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_show_quota_usage [0.042612s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas.VolumeQuotasAdminTestJSON.test_update_all_quota_resources_for_tenant [0.173540s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_quota_volume_gigabytes [0.130893s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_quota_volumes [0.139538s] ... ok
+{0} tempest.api.volume.admin.test_volume_quotas_negative.VolumeQuotasNegativeTestJSON.test_volume_extend_gigabytes_quota_deviation [0.096981s] ... ok
+{0} tempest.api.volume.admin.test_volume_retype.VolumeRetypeWithoutMigrationTest.test_available_volume_retype [3.687242s] ... ok
+{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_host_name [0.018664s] ... ok
+{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_service_and_host_name [0.013259s] ... ok
+{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_service_binary_name [0.016054s] ... ok
+{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_get_service_by_volume_host_name [2.511702s] ... ok
+{0} tempest.api.volume.admin.test_volume_services.VolumesServicesTestJSON.test_list_services [0.019940s] ... ok
+{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_disable_log_reason_with_no_reason [0.040567s] ... ok
+{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_disable_service_with_invalid_binary [0.028218s] ... ok
+{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_enable_service_with_invalid_host [0.022010s] ... ok
+{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_freeze_host_with_invalid_host [0.021513s] ... ok
+{0} tempest.api.volume.admin.test_volume_services_negative.VolumeServicesNegativeTest.test_thaw_host_with_invalid_host [0.013062s] ... ok
+{0} tempest.api.volume.admin.test_volume_snapshot_quotas_negative.VolumeSnapshotQuotasNegativeTestJSON.test_quota_volume_gigabytes_snapshots [0.203098s] ... ok
+{0} tempest.api.volume.admin.test_volume_snapshot_quotas_negative.VolumeSnapshotQuotasNegativeTestJSON.test_quota_volume_snapshots [0.030902s] ... ok
+{0} tempest.api.volume.admin.test_volume_type_access.VolumeTypesAccessTest.test_volume_type_access_add [2.638247s] ... ok
+{0} tempest.api.volume.admin.test_volume_type_access.VolumeTypesAccessTest.test_volume_type_access_list [0.223771s] ... ok
+{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_crud_with_volume_type_and_extra_specs [4.165283s] ... ok
+{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_create_get_delete [0.085456s] ... ok
+{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_encryption_create_get_update_delete [0.276813s] ... ok
+{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_list [0.023938s] ... ok
+{0} tempest.api.volume.admin.test_volume_types.VolumeTypesTest.test_volume_type_update [0.137684s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_spec_create_get_delete [0.137770s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_specs_list [0.064607s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs.VolumeTypesExtraSpecsTest.test_volume_type_extra_specs_update [0.187410s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_invalid_body [0.014365s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_none_body [0.016005s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_create_nonexistent_type_id [0.020646s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_delete_nonexistent_volume_type_id [0.012677s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_get_nonexistent_extra_spec_name [0.014744s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_get_nonexistent_volume_type_id [0.018756s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_list_nonexistent_volume_type_id [0.013533s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_multiple_extra_spec [0.016341s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_no_body [0.008630s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_none_extra_spec_id [0.033451s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_nonexistent_extra_spec_id [0.024394s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_extra_specs_negative.ExtraSpecsNegativeTest.test_update_nonexistent_type_id [0.021814s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_volume_type_encryption_nonexistent_type_id [0.074478s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_volume_with_private_volume_type [0.169792s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_with_empty_name [0.008431s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_create_with_repeated_name [0.070204s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_delete_nonexistent_type_id [0.010704s] ... ok
+{0} tempest.api.volume.admin.test_volume_types_negative.VolumeTypesNegativeTest.test_get_nonexistent_type_id [0.008106s] ... ok
+{0} tempest.api.volume.admin.test_volumes_list.VolumesListAdminTestJSON.test_volume_list_param_tenant [1.516695s] ... ok
+{0} tempest.api.volume.test_availability_zone.AvailabilityZoneTestJSON.test_get_availability_zone_list [0.085428s] ... ok
+{0} tempest.api.volume.test_extensions.ExtensionsTestJSON.test_list_extensions [0.070353s] ... ok
+{0} tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata [0.199474s] ... ok
+{0} tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item [0.180299s] ... ok
+{0} tempest.api.volume.test_versions.VersionsTest.test_list_versions [0.013704s] ... ok
+{0} tempest.api.volume.test_versions.VersionsTest.test_show_version [0.082129s] ... ok
+{0} tempest.api.volume.test_volume_absolute_limits.AbsoluteLimitsTests.test_get_volume_absolute_limits [0.045496s] ... ok
+{0} tempest.api.volume.test_volume_delete_cascade.VolumesDeleteCascade.test_volume_delete_cascade [5.870701s] ... ok
+{0} tempest.api.volume.test_volume_delete_cascade.VolumesDeleteCascade.test_volume_from_snapshot_cascade_delete [8.044305s] ... ok
+{0} tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata [0.207802s] ... ok
+{0} tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_show_volume_metadata_item [0.163419s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersTest.test_create_get_list_accept_volume_transfer [3.590104s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersTest.test_create_list_delete_volume_transfer [2.509379s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV355Test.test_create_get_list_accept_volume_transfer [3.433813s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV355Test.test_create_list_delete_volume_transfer [2.557096s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV357Test.test_create_get_list_accept_volume_transfer [3.457474s] ... ok
+{0} tempest.api.volume.test_volume_transfers.VolumesTransfersV357Test.test_create_list_delete_volume_transfer [2.512926s] ... ok
+{0} tempest.api.volume.test_volumes_clone.VolumesCloneTest.test_create_from_volume [4.841239s] ... ok
+{0} tempest.api.volume.test_volumes_clone_negative.VolumesCloneNegativeTest.test_create_from_volume_decreasing_size [2.455314s] ... ok
+{0} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete [4.916243s] ... ok
+{0} tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_as_clone [8.163800s] ... ok
+{0} tempest.api.volume.test_volumes_get.VolumesSummaryTest.test_show_volume_summary [0.079481s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list [0.025311s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_name [0.033899s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_name [0.048949s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_pagination [0.163708s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_with_multiple_params [0.256309s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_pagination [0.113963s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_param_display_name_and_status [0.036740s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_display_name_and_status [0.059991s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_marker [0.046366s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_metadata [0.050387s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_details [0.028610s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_param_metadata [0.018049s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_availability_zone [0.096596s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_bootable [0.074176s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_status [0.077968s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_availability_zone [0.035988s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_bootable [0.025976s] ... ok
+{0} tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_status [0.034036s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_from_deactivated_image [1.273677s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_from_image_with_decreasing_size [1.116027s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size [0.008098s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_snapshot_id [0.016524s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_source_volid [0.013363s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_volume_type [0.017370s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_negative [0.006869s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero [0.007692s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size [0.007012s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id [0.018813s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id [0.006245s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_detach_volumes_with_invalid_volume_id [0.012751s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id [0.012963s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id [0.004919s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_invalid_status [0.025673s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_nonexistent_name [0.027315s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_invalid_status [0.016967s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_nonexistent_name [0.022702s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status [0.096861s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id [0.018462s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id [0.012525s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_empty_volume_id [0.005205s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_invalid_volume_id [0.011894s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_nonexistent_volume_id [0.014544s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id [0.012542s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_None_size [0.007042s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_non_number_size [0.014523s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_nonexistent_volume_id [0.014359s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_with_size_smaller_than_original_size [0.012084s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_extend_without_passing_volume_id [0.013725s] ... ok
+{0} tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id [0.010915s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit [0.019319s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit_equals_infinite [0.034471s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_limit_equals_zero [0.019733s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_marker [0.045911s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_offset [0.033878s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_created_at_asc [0.026988s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_created_at_desc [0.021340s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_id_asc [0.024022s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_id_desc [0.025735s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_name_asc [0.027858s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshot_list_param_sort_name_desc [0.027154s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_details_with_params [0.092649s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_with_params [0.089291s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id [0.082457s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id [0.035511s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshot_invalid_param_limit [0.015219s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshots_invalid_param_marker [0.015456s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_list_snapshots_invalid_param_sort [0.015375s] ... ok
+{0} tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_volume_from_snapshot_decreasing_size [4.624540s] ... ok
+
+==============================
+Failed 1 tests - output below:
+==============================
+
+tempest.api.image.v2.test_images_dependency.ImageDependencyTests.test_image_volume_server_snapshot_dependency[compute,id-f0c8a35d-8f8f-443c-8bcb-85a9c0f87d19,volume]
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Captured traceback:
+~~~~~~~~~~~~~~~~~~~
+    Traceback (most recent call last):
+
+      File "/opt/stack/tempest/tempest/common/utils/__init__.py", line 65, in wrapper
+    return f(*func_args, **func_kwargs)
+
+      File "/opt/stack/tempest/tempest/api/image/v2/test_images_dependency.py", line 128, in test_image_volume_server_snapshot_dependency
+    base_image_id, snapshot_image_id = self._create_instance_snapshot(
+
+      File "/opt/stack/tempest/tempest/api/image/v2/test_images_dependency.py", line 77, in _create_instance_snapshot
+    instance = self.create_test_server(
+
+      File "/opt/stack/tempest/tempest/api/compute/base.py", line 243, in create_test_server
+    body, servers = compute.create_test_server(
+
+      File "/opt/stack/tempest/tempest/common/compute.py", line 264, in create_test_server
+    with excutils.save_and_reraise_exception():
+
+      File "/opt/stack/data/venv/lib/python3.10/site-packages/oslo_utils/excutils.py", line 227, in __exit__
+    self.force_reraise()
+
+      File "/opt/stack/data/venv/lib/python3.10/site-packages/oslo_utils/excutils.py", line 200, in force_reraise
+    raise self.value
+
+      File "/opt/stack/tempest/tempest/common/compute.py", line 260, in create_test_server
+    waiters.wait_for_volume_resource_status(volumes_client,
+
+      File "/opt/stack/tempest/tempest/common/waiters.py", line 372, in wait_for_volume_resource_status
+    raise exceptions.VolumeResourceBuildErrorException(
+
+    tempest.exceptions.VolumeResourceBuildErrorException: volume 8e66ccf9-e65e-4fc0-8258-cacfa95f7953 failed to build and is in ERROR status
+
+
+Captured pythonlogging:
+~~~~~~~~~~~~~~~~~~~~~~~
+    2024-07-08 15:43:00,679 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 201 POST http://10.201.5.87/image/v2/images 0.388s
+2024-07-08 15:43:00,680 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"name": "tempest-image-dependency-test-1277504139", "container_format": "bare", "disk_format": "raw", "visibility": "private"}
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:00 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '648', 'content-type': 'application/json', 'location': 'http://127.0.0.1:60999/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd', 'openstack-image-import-methods': 'glance-direct,web-download,copy-image', 'x-openstack-request-id': 'req-b23f0dc5-4378-439a-998f-e580cb854998', 'connection': 'close', 'status': '201', 'content-location': 'http://10.201.5.87/image/v2/images'}
+        Body: b'{"name": "tempest-image-dependency-test-1277504139", "disk_format": "raw", "container_format": "bare", "visibility": "private", "size": null, "virtual_size": null, "status": "queued", "checksum": null, "protected": false, "min_ram": 0, "min_disk": 0, "owner": "cd2ad5dbdfc345e98b04096c8fa60e9c", "os_hidden": false, "os_hash_algo": null, "os_hash_value": null, "id": "ab83f358-db49-40de-85c9-f52686f04bfd", "created_at": "2024-07-08T15:43:01Z", "updated_at": "2024-07-08T15:43:01Z", "tags": [], "self": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd", "file": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file", "schema": "/v2/schemas/image"}'
+2024-07-08 15:43:01,393 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 204 PUT http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file 0.712s
+2024-07-08 15:43:01,394 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/octet-stream', 'X-Auth-Token': '<omitted>'}
+        Body: <callable_iterator object at 0x7f97fdb8c160>
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:00 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'text/html; charset=UTF-8', 'x-openstack-request-id': 'req-1472fb01-eef7-49af-b04b-bb17095ed180', 'connection': 'close', 'status': '204', 'content-location': 'http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd/file'}
+        Body: b''
+2024-07-08 15:43:01,410 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd 0.016s
+2024-07-08 15:43:01,410 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '808', 'content-type': 'application/json', 'x-openstack-request-id': 'req-07773e32-caa5-4819-83f3-347e3ea6c2e8', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/image/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd'}
+        Body: b'{"name": "tempest-image-dependency-test-1277504139", "disk_format": "raw", "container_format": "bare", "visibility": "private", "size": 1024, "virtual_size": 1024, "status": "active", "checksum": "d213d3221b79e6a3cb56e561e8d673b1", "protected": false, "min_ram": 0, "min_disk": 0, "owner": "cd2ad5dbdfc345e98b04096c8fa60e9c", "os_hidden": false, "os_hash_algo": "sha512", "os_hash_value": "3b998a78699e002b9d5b1734564a250fad4c4db8f8c19270cfe2aa226d3ab0c655388f04d424b2ffbc0a5ecf7c3387bbf2740dada4bb6e635a597c8476f06c77", "id": "ab83f358-db49-40de-85c9-f52686f04bfd", "created_at": "2024-07-08T15:43:01Z", "updated_at": "2024-07-08T15:43:01Z", "tags": [], "self": "/v2/images/ab83f358-db49-40de-85c9-f52686f04bfd", "file": "/v2/images/ab83f
+    358-db49-40de-85c9-f52686f04bfd/file", "schema": "/v2/schemas/image"}'
+2024-07-08 15:43:01,431 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 201 POST http://10.201.5.87/identity/v3/auth/tokens 0.018s
+2024-07-08 15:43:01,432 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+        Body: <omitted>
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'content-length': '2819', 'x-subject-token': '<omitted>', 'vary': 'X-Auth-Token', 'x-openstack-request-id': 'req-fb77b339-7a4f-4b33-aad0-b0a00578b7b0', 'connection': 'close', 'status': '201', 'content-location': 'http://10.201.5.87/identity/v3/auth/tokens'}
+        Body: b'{"token": {"methods": ["password"], "user": {"domain": {"id": "default", "name": "Default"}, "id": "76c7f999a2334fe4b0576aa9756d58e8", "name": "tempest-ImageDependencyTests-897282111-project-member", "password_expires_at": null}, "audit_ids": ["8jqiyW6pQ4W6QXguaC9RsA"], "expires_at": "2024-07-08T16:43:01.000000Z", "issued_at": "2024-07-08T15:43:01.000000Z", "project": {"domain": {"id": "default", "name": "Default"}, "id": "cd2ad5dbdfc345e98b04096c8fa60e9c", "name": "tempest-ImageDependencyTests-897282111"}, "is_domain": false, "roles": [{"id": "6264315620f145dba0e833e4ccc8803f", "name": "member"}, {"id": "e31259f898b340adbf07916790d1610d", "name": "reader"}], "catalog": [{"endpoints": [{"id": "530c547e45364337b0be34c431bf71ea", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/compute/v2/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "56837a00ed9c4df38e279965c74d3195", "type": "compute_legacy", "name": "nova_legacy"}, {"endpoints": [{"id": "0c837daf09e14ae986585147d77cad5e", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/image", "region": "RegionOne"}], "id": "6ca9389f6f96436f9a8440d9ad620a77", "type": "image", "name": "glance"}, {"endpoints": [{"id": "5cac46dbde974438aa264ac7cc5fa1db", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/compute/v2.1", "region": "RegionOne"}], "id": "7ea4a3831ba14241b8b1f60b0cf559b8", "type": "compute", "name": "nova"}, {"endpoints": [{"id": "47e1db7fab2943eda63459f1e4afba99", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87:9696/networking", "region": "RegionOne"}], "id": "a09072a0b4a14027b7fb27ae53ecdf2d", "type": "network", "name": "neutron"}, {"endpoints": [{"id": "1c9435309c52469db2f7201eb7bdb367", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "a9fe85bc35dc4aa3b7dad12946258b62", "type": "volumev3", "name": "cinderv3"}, {"endpoints": [{"id": "4ed80eedf63c43f3aafebc9368e21afa", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c", "region": "RegionOne"}], "id": "c4c74a597619429fa56533ff55f0264c", "type": "block-storage", "name": "cinder"}, {"endpoints": [{"id": "d717fb72f4c1480e9d45aa827ce71ec1", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/identity", "region": "RegionOne"}], "id": "f065218e39a8428e8ae854b3fedffc2a", "type": "identity", "name": "keystone"}, {"endpoints": [{"id": "82c0d48dcb6d46ca860f4943bae1eb70", "interface": "public", "region_id": "RegionOne", "url": "http://10.201.5.87/placement", "region": "RegionOne"}], "id": "f2e9b292247a40a3a4a86962f1c5b1e5", "type": "placement", "name": "placement"}]}}'
+2024-07-08 15:43:01,432 116299 INFO     [tempest.lib.common.fixed_network] (ImageDependencyTests:test_image_volume_server_snapshot_dependency) Found network None available for tenant
+2024-07-08 15:43:01,633 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 202 POST http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60
+    e9c/volumes 0.200s
+2024-07-08 15:43:01,633 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: {"volume": {"name": "tempest-tempest.common.compute-volume-1895717299", "imageRef": "ab83f358-db49-40de-85c9-f52686f04bfd", "size": 1}}
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-4951d462-15fd-4b1b-ad83-d1cb35ae1cf0', 'content-length': '819', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-4951d462-15fd-4b1b-ad83-d1cb35ae1cf0', 'connection': 'close', 'status': '202', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:01.597884", "updated_at": null, "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": []}}'
+2024-07-08 15:43:01,677 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.039s
+2024-07-08 15:43:01,677 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:01 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-c81b6a4b-a38a-4a5d-ac61-c6c98b5d2cba', 'content-length': '887', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-c81b6a4b-a38a-4a5d-ac61-c6c98b5d2cba', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": null, "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:02,715 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.024s
+2024-07-08 15:43:02,715 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        B
+    ody: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:02 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-ce1f3b75-d15e-4842-b432-97dfdd78df0b', 'content-length': '911', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-ce1f3b75-d15e-4842-b432-97dfdd78df0b', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:02.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:03,748 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.026s
+2024-07-08 15:43:03,748 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:03 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-ff730510-8a51-458d-b48b-568a8cb73123', 'content-length': '969', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-ff730510-8a51-458d-b48b-568a8cb73123', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "creating", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:02.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:04,785 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.031s
+2024-07-08 15:43:04,785 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:04 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'applica
+    tion/json', 'x-compute-request-id': 'req-93035ff6-5c44-42b5-aaf6-4db92a2d470c', 'content-length': '972', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-93035ff6-5c44-42b5-aaf6-4db92a2d470c', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "downloading", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:04.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:05,825 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.034s
+2024-07-08 15:43:05,825 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-e31020f6-8173-4609-878b-fb27053621d0', 'content-length': '966', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-e31020f6-8173-4609-878b-fb27053621d0', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "error", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:06.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:05,879 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 202 DELETE http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.049s
+2024-07-08 15:43:05,880 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-length': '0', 'content-type': 'text/html; charset=UTF-8', 'openstack-api-version': 'volume
+     3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-625745f4-8b0a-45a1-ad4a-ce48f6c53ef3', 'connection': 'close', 'status': '202', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b''
+2024-07-08 15:43:05,908 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 200 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.027s
+2024-07-08 15:43:05,908 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:05 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'content-type': 'application/json', 'x-compute-request-id': 'req-5e3e7fac-b6dd-454a-95ac-f960763668d5', 'content-length': '969', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'x-openstack-request-id': 'req-5e3e7fac-b6dd-454a-95ac-f960763668d5', 'connection': 'close', 'status': '200', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"volume": {"id": "8e66ccf9-e65e-4fc0-8258-cacfa95f7953", "status": "deleting", "size": 1, "availability_zone": "nova", "created_at": "2024-07-08T15:43:02.000000", "updated_at": "2024-07-08T15:43:06.000000", "name": "tempest-tempest.common.compute-volume-1895717299", "description": null, "volume_type": "arcusfc1", "snapshot_id": null, "source_volid": null, "metadata": {}, "links": [{"rel": "self", "href": "http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}, {"rel": "bookmark", "href": "http://10.201.5.87/volume/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953"}], "user_id": "76c7f999a2334fe4b0576aa9756d58e8", "bootable": "false", "encrypted": false, "replication_status": null, "consistencygroup_id": null, "multiattach": false, "attachments": [], "volume_image_metadata": {"signature_verified": "False"}, "os-vol-tenant-attr:tenant_id": "cd2ad5dbdfc345e98b04096c8fa60e9c"}}'
+2024-07-08 15:43:06,940 116299 INFO     [tempest.lib.common.rest_client] Request (ImageDependencyTests:test_image_volume_server_snapshot_dependency): 404 GET http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953 0.024s
+2024-07-08 15:43:06,940 116299 DEBUG    [tempest.lib.common.rest_client] Request - Headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth-Token': '<omitted>'}
+        Body: None
+    Response - Headers: {'date': 'Mon, 08 Jul 2024 15:43:06 GMT', 'server': 'Apache/2.4.52 (Ubuntu)', 'openstack-api-version': 'volume 3.0', 'vary': 'OpenStack-API-Version', 'content-length': '109', 'content-type': 'application/json', 'x-compute-request-id': 'req-9c08a6dc-8f5a-40ab-87b4-8d0cc9a4d4a6', 'x-openstack-request-id': 'req-9c08a6dc-8f5a-40ab-87b4-8d0cc9a4d4a6', 'connection': 'close', 'status': '404', 'content-location': 'http://10.201.5.87/volume/v3/cd2ad5dbdfc345e98b04096c8fa60e9c/volumes/8e66ccf9-e65e-4fc0-8258-cacfa95f7953'}
+        Body: b'{"itemNotFound": {"code": 404, "message": "Volume 8e66ccf9-e65e-4fc0-8258-cacfa95f7953 could not be found."}}'
+
+
 
 ======
 Totals
 ======
-Ran: 202 tests in 324.9522 sec.
+Ran: 203 tests in 333.4801 sec.
  - Passed: 196
  - Skipped: 6
  - Expected Fail: 0
  - Unexpected Success: 0
- - Failed: 0
-Sum of execute time for each test: 171.9467 sec.
+ - Failed: 1
+Sum of execute time for each test: 176.8510 sec.
 
 ==============
 Worker Balance
 ==============
- - Worker 0 (202 tests) => 0:05:24.952232
+ - Worker 0 (203 tests) => 0:05:33.480087
