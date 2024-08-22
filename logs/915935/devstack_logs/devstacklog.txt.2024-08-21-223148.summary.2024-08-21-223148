@@ -1,0 +1,14 @@
+2024-08-21 22:31:49.088 | stack.sh log /tmp/devstack_logs/devstacklog.txt.2024-08-21-223148
+2024-08-21 22:31:59.171 | Installing package prerequisites
+2024-08-21 22:36:39.473 | Starting RabbitMQ
+2024-08-21 22:37:18.775 | Installing OpenStack project source
+2024-08-21 22:47:43.554 | Installing Tempest
+2024-08-21 22:47:51.721 | Configuring and starting MySQL
+2024-08-21 22:48:09.659 | Starting Keystone
+2024-08-21 22:49:28.234 | Configuring Glance
+2024-08-21 22:49:28.559 | Configuring Neutron
+2024-08-21 22:50:29.275 | Configuring Cinder
+2024-08-21 22:50:29.454 | Configuring placement
+2024-08-21 22:50:50.560 | Configuring Nova
+2024-08-21 22:51:08.279 | Starting Nova API
+2024-08-21 22:51:14.680 | Starting OVN services
