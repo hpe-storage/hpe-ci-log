@@ -12,11 +12,12 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 823c2e68b35b412e897c5d9c7f04a607
-cinder_internal_tenant_project_id = 7524e25582b64abd8d1d3f571460630b
+cinder_internal_tenant_user_id = 11767a1b2ccc4ddf9ca11086dc98df2c
+cinder_internal_tenant_project_id = ef7104592c394049bd65eba3c2bdfd03
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.201.5.87/image
 osapi_volume_workers = 2
+log_color = True
 logging_exception_prefix = ERROR %(name)s [01;35m%(instance)s[00m
 logging_default_format_string = %(color)s%(levelname)s %(name)s [[00;36m-%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m
 logging_context_format_string = %(color)s%(levelname)s %(name)s [[01;36m%(global_request_id)s %(request_id)s [00;36m%(project_name)s %(user_name)s%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m
@@ -82,3 +83,17 @@ backend_url = etcd3+http://10.201.5.87:2379?api_version=v3
 [oslo_policy]
 enforce_new_defaults = false
 enforce_scope = false
+
+[service_user]
+auth_strategy = keystone
+send_service_user_token = True
+memcached_servers = localhost:11211
+cafile = /opt/stack/data/ca-bundle.pem
+project_domain_name = Default
+project_name = service
+user_domain_name = Default
+password = hpinvent
+username = cinder
+auth_url = http://10.201.5.87/identity
+interface = public
+auth_type = password
