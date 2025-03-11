@@ -1,0 +1,52 @@
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 systemd[1]: Starting Devstack devstack@etcd.service...
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: WARNING: Package "github.com/golang/protobuf/protoc-gen-go/generator" is deprecated.
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]:         A future release of golang/protobuf will delete this package,
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]:         which has long been excluded from the compatibility promise.
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: Running http and grpc server on single port. This is not recommended for production.
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: etcd Version: 3.4.27
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: [WARNING] Deprecated '--logger=capnslog' flag is set; use '--logger=zap' flag instead
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: Git SHA: c92fb80f3
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: Go Version: go1.19.10
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: Go OS/Arch: linux/amd64
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: setting maximum number of CPUs to 4, total number of available CPUs is 4
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: Running http and grpc server on single port. This is not recommended for production.
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: name = jammy-provider-cloud-0000008016
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: data dir = /opt/stack/data/etcd
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: member dir = /opt/stack/data/etcd/member
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: heartbeat = 100ms
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: election = 1000ms
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: snapshot count = 100000
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: advertise client URLs = http://10.201.5.87:2379
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: check file permission: directory "/opt/stack/data/etcd" exist, but the permission is "dtrwxrwxrwx". The recommended permission is "-rwx------" to prevent possible unprivileged access to the data.
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: starting member 75fd5e795c70a948 in cluster 259fa5276585a8fc
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: 75fd5e795c70a948 switched to configuration voters=()
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: 75fd5e795c70a948 became follower at term 0
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: newRaft 75fd5e795c70a948 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: 75fd5e795c70a948 became follower at term 1
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: 75fd5e795c70a948 switched to configuration voters=(8502055546880305480)
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: simple token is not cryptographically signed
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: starting server... [version: 3.4.27, cluster version: to_be_decided]
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: 75fd5e795c70a948 as single-node; fast-forwarding 9 ticks (election ticks 10)
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:16 INFO: 75fd5e795c70a948 switched to configuration voters=(8502055546880305480)
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: added member 75fd5e795c70a948 [http://10.201.5.87:2380] to cluster 259fa5276585a8fc
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap.db, max: 5, interval: 30s
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: started to purge file, dir: /opt/stack/data/etcd/member/snap, suffix: snap, max: 5, interval: 30s
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: started to purge file, dir: /opt/stack/data/etcd/member/wal, suffix: wal, max: 5, interval: 30s
+Feb 17 14:27:16 jammy-provider-cloud-0000008016 etcd[59943]: listening for peers on [::]:2380
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:17 INFO: 75fd5e795c70a948 is starting a new election at term 1
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:17 INFO: 75fd5e795c70a948 became candidate at term 2
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:17 INFO: 75fd5e795c70a948 received MsgVoteResp from 75fd5e795c70a948 at term 2
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:17 INFO: 75fd5e795c70a948 became leader at term 2
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: raft2025/02/17 14:27:17 INFO: raft.node: 75fd5e795c70a948 elected leader 75fd5e795c70a948 at term 2
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: published {Name:jammy-provider-cloud-0000008016 ClientURLs:[http://10.201.5.87:2379]} to cluster 259fa5276585a8fc
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: setting up the initial cluster version to 3.4
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: ready to serve client requests
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: serving insecure client requests on 10.201.5.87:2379, this is strongly discouraged!
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: set the initial cluster version to 3.4
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 etcd[59943]: enabled capabilities for version 3.4
+Feb 17 14:27:17 jammy-provider-cloud-0000008016 systemd[1]: Started Devstack devstack@etcd.service.
+Feb 17 14:31:16 jammy-provider-cloud-0000008016 etcd[59943]: start time = 2025-02-17 14:31:16.122335271 +0000 UTC m=+239.774297264, time spent = 523.113µs, remote = 10.201.5.87:33320, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Feb 17 14:31:16 jammy-provider-cloud-0000008016 etcd[59943]: start time = 2025-02-17 14:31:16.132267991 +0000 UTC m=+239.784229997, time spent = 288.464µs, remote = 10.201.5.87:33320, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Feb 17 14:31:22 jammy-provider-cloud-0000008016 etcd[59943]: start time = 2025-02-17 14:31:22.591099431 +0000 UTC m=+246.243061438, time spent = 173.487µs, remote = 10.201.5.87:33320, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
+Feb 17 14:31:24 jammy-provider-cloud-0000008016 etcd[59943]: start time = 2025-02-17 14:31:24.574897803 +0000 UTC m=+248.226859807, time spent = 169.618µs, remote = 10.201.5.87:33320, response type = /etcdserverpb.Lease/LeaseGrant, request count = -1, request size = -1, response count = -1, response size = -1, request content = 
