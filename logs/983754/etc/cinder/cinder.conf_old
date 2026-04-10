@@ -13,8 +13,8 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 86f5f613f9a0408890debe6fedcc8a21
-cinder_internal_tenant_project_id = cce93a20552c4775b270987689af61bd
+cinder_internal_tenant_user_id = 7ac22463a47a4e69bf1c053a670e116e
+cinder_internal_tenant_project_id = eb4c81ad53214a05b22409d1ab0c2ba0
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.201.5.127/image
 osapi_volume_workers = 2
