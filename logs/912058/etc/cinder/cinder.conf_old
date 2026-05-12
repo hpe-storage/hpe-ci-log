@@ -13,11 +13,10 @@ interface = public
 auth_type = password
 
 [DEFAULT]
-cinder_internal_tenant_user_id = 59611c7dfff34aaaa8d96d52f2d9cc7a
-cinder_internal_tenant_project_id = 004a79261c524407b7dcf49fd26bf646
+cinder_internal_tenant_user_id = 75024bb64a0f453ea625ba9e2a000dd7
+cinder_internal_tenant_project_id = c6058cd00e954360a499a1052eff4b1c
 graceful_shutdown_timeout = 5
 glance_api_servers = http://10.201.5.127/image
-osapi_volume_workers = 2
 log_color = True
 logging_exception_prefix = ERROR %(name)s [01;35m%(instance)s[00m
 logging_default_format_string = %(color)s%(levelname)s %(name)s [[00;36m-%(color)s] [01;35m%(instance)s%(color)s%(message)s[00m
@@ -36,7 +35,6 @@ quota_backups = 10
 quota_volumes = 10
 my_ip = 10.201.5.127
 state_path = /opt/stack/data/cinder
-osapi_volume_listen = 0.0.0.0
 osapi_volume_extension = cinder.api.contrib.standard_extensions
 rootwrap_config = /etc/cinder/rootwrap.conf
 api_paste_config = /etc/cinder/api-paste.ini
